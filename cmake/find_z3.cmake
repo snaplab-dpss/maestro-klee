@@ -31,6 +31,7 @@ if (ENABLE_SOLVER_Z3)
     list(APPEND KLEE_SOLVER_LIBRARIES ${Z3_LIBRARIES})
 
     # Check the signature of `Z3_get_error_msg()`
+    set(HAVE_Z3_GET_ERROR_MSG_NEEDS_CONTEXT 1)
     set (_old_CMAKE_REQUIRED_LIBRARIES "${CMAKE_REQUIRED_LIBRARIES}")
     set(CMAKE_REQUIRED_LIBRARIES ${CMAKE_REQUIRED_LIBRARIES} ${Z3_LIBRARIES})
     check_prototype_definition(Z3_get_error_msg
