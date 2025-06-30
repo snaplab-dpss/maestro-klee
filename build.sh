@@ -30,6 +30,7 @@ build() {
       -DENABLE_KLEE_ASSERTS=ON \
       -DENABLE_DOXYGEN=OFF \
       -DCMAKE_BUILD_TYPE=RelWithDebInfo \
+      -DCMAKE_POSITION_INDEPENDENT_CODE=ON \
       $KLEE_DIR
 
   make -kj $(nproc) || exit 1
